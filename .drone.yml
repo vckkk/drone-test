@@ -6,12 +6,12 @@ steps:
 - name: deploy
   image: appleboy/drone-scp
   settings:
-    host: 49.232.203.23
+    host:
+      from_secret: ssh_host
     username: 
       from_secret: ssh_username
     password: 
       from_secret: ssh_password
     port: 8086
     target: /var/www/blog
-    source:
-      - ./docs/.vuepress/dist/*
+    source: /*
