@@ -13,5 +13,5 @@ steps:
     password: 
       from_secret: ssh_password
     port: 8086
-    target: /var/www/blog
-    source: /*
+    target: ./*
+    source: /var/www/blog/drone
