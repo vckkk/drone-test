@@ -28,3 +28,15 @@ steps:
   image: node:14
   commands:
     - node --version
+
+- name: deploy
+  image: plugins/scp
+  settings:
+    host: 
+      from_secret: ssh_host
+    username:
+      from_secret: ssh_username
+    password:
+      from_secret: ssh_ssh_password
+    target: /home
+    source: ./README.md
