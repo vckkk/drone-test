@@ -3,15 +3,7 @@ type: docker
 name: my-node-build
 
 steps:
-- name: deploy
-  image: appleboy/drone-scp
-  settings:
-    host:
-      from_secret: ssh_host
-    username: 
-      from_secret: ssh_username
-    password: 
-      from_secret: ssh_password
-    port: 8086
-    target: ./*
-    source: /var/www/blog/drone
+  - name: clone
+    image: alpine/git
+    commands: 
+      - git clone https://github.com/vckkk/drone-test.git
