@@ -30,13 +30,8 @@ steps:
     - node --version
 
 - name: deploy
-  image: plugins/scp
-  settings:
-    host: 
-      from_secret: ssh_host
-    username:
-      from_secret: ssh_username
-    password:
-      from_secret: ssh_ssh_password
-    target: /home
-    source: ./README.md
+  image: wtnb75/lftp
+  environment:
+    - LFTP_SERVER={ssh_host}
+    - LFTP_USER={ssh_username}
+    - LFTP_PASSWORD=${ssh_password}
