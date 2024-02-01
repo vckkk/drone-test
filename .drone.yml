@@ -1,8 +1,26 @@
+# kind: pipeline
+# name: my-node-build
+
+# steps:
+#   - name: clone
+#     image: alpine/git
+#     commands: 
+#       - git clone https://github.com/vckkk/drone-test.git
+
 kind: pipeline
+type: docker
 name: my-node-build
 
 steps:
-  - name: clone
-    image: alpine/git
-    commands: 
-      - git clone https://github.com/vckkk/drone-test.git
+- name: deploy
+  image: appleboy/drone-scp
+  settings:
+    host: 49.232.203.23
+    username: 
+      from_secret: ssh_username
+    password: 
+      from_secret: ssh_password
+    port: 8086
+    target: /var/www/blog
+    source:
+      - ./docs/.vuepress/dist/*
