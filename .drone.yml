@@ -32,9 +32,9 @@ steps:
 - name: deploy
   image: wtnb75/lftp
   environment:
-    - LFTP_SERVER:
+    LFTP_SERVER:
         from_secret: ssh_host
-    - LFTP_USER:
+    LFTP_USER:
         from_secret: ssh_username
-    - LFTP_PASSWORD:
+    LFTP_PASSWORD:
         from_secret: ssh_password
