@@ -32,6 +32,6 @@ steps:
 - name: deploy
   image: wtnb75/lftp
   environment:
-    - LFTP_SERVER={ssh_host}
-    - LFTP_USER={ssh_username}
+    - LFTP_SERVER=${ssh_host}
+    - LFTP_USER=${ssh_username}
     - LFTP_PASSWORD=${ssh_password}
