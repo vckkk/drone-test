@@ -29,12 +29,12 @@ steps:
   commands:
     - node --version
 
-- name: deploy
-  image: wtnb75/lftp
-  environment:
-    LFTP_SERVER:
-        from_secret: ssh_host
-    LFTP_USER:
-        from_secret: ssh_username
-    LFTP_PASSWORD:
-        from_secret: ssh_password
+# - name: deploy
+#   image: wtnb75/lftp
+#   environment:
+#     LFTP_SERVER:
+#         from_secret: ssh_host
+#     LFTP_USER:
+#         from_secret: ssh_username
+#     LFTP_PASSWORD:
+#         from_secret: ssh_password
